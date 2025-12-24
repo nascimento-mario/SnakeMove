@@ -367,7 +367,7 @@
                     <p>• Point LEFT 👈 to move left</p>
                     <p>• Point RIGHT 👉 to move right</p>
                     <p>• Close your hand ✊ to STOP</p>
-                    <p>• Eat the red (dot) food to grow the snake and score!</p>
+                    <p>• Eat the apple 🍎 to grow the snake and score!</p>
                 </div>
             </div>
         </div>
@@ -777,9 +777,11 @@
         }
         
         function drawGame() {
+            // Clear canvas
             ctx.fillStyle = '#1a1a2e';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
+            // Draw grid
             ctx.strokeStyle = '#16213e';
             ctx.lineWidth = 1;
             for (let i = 0; i <= GRID_SIZE; i++) {
@@ -794,26 +796,54 @@
                 ctx.stroke();
             }
             
+            // Draw snake body
             snake.forEach((segment, index) => {
-                ctx.fillStyle = index === 0 ? '#4ecca3' : '#45b393';
-                ctx.fillRect(
-                    segment.x * CELL_SIZE + 1,
-                    segment.y * CELL_SIZE + 1,
-                    CELL_SIZE - 2,
-                    CELL_SIZE - 2
-                );
+                if (index === 0) {
+                    // Draw head with emoji 😋
+                    ctx.fillStyle = '#ffd700'; // Gold/yellow background circle
+                    ctx.beginPath();
+                    ctx.arc(
+                        segment.x * CELL_SIZE + CELL_SIZE / 2,
+                        segment.y * CELL_SIZE + CELL_SIZE / 2,
+                        CELL_SIZE / 2 - 1,
+                        0,
+                        Math.PI * 2
+                    );
+                    ctx.fill();
+                    
+                    // Draw emoji on head
+                    ctx.font = `${CELL_SIZE - 4}px Arial`;
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(
+                        '😋',
+                        segment.x * CELL_SIZE + CELL_SIZE / 2,
+                        segment.y * CELL_SIZE + CELL_SIZE / 2
+                    );
+                } else {
+                    // Draw body segments as yellow circles
+                    ctx.fillStyle = '#ffeb3b'; // Bright yellow
+                    ctx.beginPath();
+                    ctx.arc(
+                        segment.x * CELL_SIZE + CELL_SIZE / 2,
+                        segment.y * CELL_SIZE + CELL_SIZE / 2,
+                        CELL_SIZE / 2 - 1,
+                        0,
+                        Math.PI * 2
+                    );
+                    ctx.fill();
+                }
             });
             
-            ctx.fillStyle = '#ff6b6b';
-            ctx.beginPath();
-            ctx.arc(
+            // Draw food as apple emoji 🍎
+            ctx.font = `${CELL_SIZE - 2}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(
+                '🍎',
                 food.x * CELL_SIZE + CELL_SIZE / 2,
-                food.y * CELL_SIZE + CELL_SIZE / 2,
-                CELL_SIZE / 2 - 2,
-                0,
-                Math.PI * 2
+                food.y * CELL_SIZE + CELL_SIZE / 2
             );
-            ctx.fill();
         }
         
         function startGame() {
