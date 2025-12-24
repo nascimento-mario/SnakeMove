@@ -9,6 +9,7 @@ A webcam-controlled Snake game where you control the snake using finger gestures
 - **Close your fist** to stop the snake
 - Real-time hand tracking using MediaPipe
 - No keyboard required - fully hands-free gameplay!
+- Fun visuals: Yellow snake with 😋 face eating apples 🍎
 
 ### Customizable Difficulty Settings
 
@@ -52,7 +53,7 @@ A webcam-controlled Snake game where you control the snake using finger gestures
    - 👈 Point LEFT - Snake moves left
    - 👉 Point RIGHT - Snake moves right
    - ✊ Close fist - Snake stops
-5. Eat the red food to grow and score points!
+5. Eat the apple 🍎 to grow and score points!
 
 ### Tips
 - Hold your hand clearly visible to the camera
@@ -114,12 +115,13 @@ foodMovementInterval = 1000; // Fast: 1 second
 - Obstacles and power-ups
 - Multiplayer mode with two hands
 
-## Author
-- Mario Nascimento (nascimento.mario@gmail.com) with extensive help from Claude (Anthropic)
-
 ## License
 
 MIT
+
+## Author
+
+Mario Nascimento (__nascimento.mario@gmail.com__) with extensive help from Claude (Anthropic)
 
 ## Credits
 
