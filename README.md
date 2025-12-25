@@ -39,7 +39,7 @@ A webcam-controlled Snake game where you control the snake using finger gestures
 ## How to Play
 
 ### Setup
-1. Download `index.html`
+1. Download `snakemovehtml` (`index.html` is depracated at this point)
 2. Open it in a modern browser (Chrome, Firefox, or Edge recommended)
 3. Allow camera permissions when prompted
 
