@@ -1,4 +1,4 @@
-# SnakeMove 🐍👆
+# SnakeMove
 
 A webcam-controlled Snake game where you control the snake using finger gestures! Designed with accessibility in mind, featuring adjustable difficulty settings for players of all ages and skill levels.
 
